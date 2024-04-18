@@ -1,6 +1,6 @@
 {
   "name": "filter-library",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a library to make filtering easy in get api request",
   "main": "dist/index.js",
   "scripts": {
