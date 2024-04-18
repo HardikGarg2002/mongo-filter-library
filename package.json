@@ -1,8 +1,8 @@
 {
   "name": "filter-library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a library to make filtering easy in get api request",
-  "main": "dist/filter.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
