@@ -1,11 +1,14 @@
-interface Filters {
+export interface IFilters {
   [field: string]: Record<string, any>;
 }
 
-export const buildQuery = (filters?: Filters, allowedFields: string[] = []) => {
+export const buildQuery = (
+  filters?: IFilters,
+  allowedFields: string[] = []
+) => {
   if (!filters) return {};
 
-  const criteria: Filters = {};
+  const criteria: IFilters = {};
 
   for (const [field, condition] of Object.entries(filters)) {
     if (!allowedFields.includes(field)) {
@@ -51,3 +54,7 @@ export const buildQuery = (filters?: Filters, allowedFields: string[] = []) => {
 
   return criteria;
 };
+
+// const filters = { title: { eq: "Room 1" } };
+
+// buildQuery(filters, ["title"]);
