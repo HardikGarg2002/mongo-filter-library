@@ -60,6 +60,14 @@ export const craftSort = (sort: string) => {
   return { [fieldName]: order === "desc" ? -1 : 1 };
 };
 
+export const craftPagination = (page: number = 1, limit: number = 20) => {
+  if (page < 1) {
+    page = 1;
+  }
+  limit = Math.min(parseInt(limit.toString()) || 20, 500);
+  const skip = (page - 1) * limit;
+  return { skip, limit };
+};
 // const filters = { title: { eq: "Room 1" } };
 
 // buildQuery(filters, ["title"]);
