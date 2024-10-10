@@ -2,7 +2,7 @@ export interface IFilters {
   [field: string]: Record<string, any>;
 }
 
-export const buildQuery = (
+export const craftQuery = (
   filters?: IFilters,
   allowedFields: string[] = []
 ) => {
@@ -53,6 +53,11 @@ export const buildQuery = (
   }
 
   return criteria;
+};
+
+export const craftSort = (sort: string) => {
+  const [fieldName, order] = sort.split(":");
+  return { [fieldName]: order === "desc" ? -1 : 1 };
 };
 
 // const filters = { title: { eq: "Room 1" } };
