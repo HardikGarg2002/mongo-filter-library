@@ -11,7 +11,7 @@ export const craftQuery = (
   const criteria: IFilters = {};
 
   for (const [field, condition] of Object.entries(filters)) {
-    if (!allowedFields.includes(field)) {
+    if (allowedFields.length > 0 && !allowedFields.includes(field)) {
       continue; // Skip fields not in allowed list
     }
 
